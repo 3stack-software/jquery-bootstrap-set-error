@@ -1,6 +1,6 @@
 Package.describe({
   name: '3stack:jquery-bootstrap-set-error',
-  version: '0.0.1',
+  version: '0.0.2',
   summary: 'Convenience method for applying error styling to bootstrap form-groups',
   git: 'https://github.com/3stack-software/jquery-bootstrap-set-error',
   documentation: 'README.md'
