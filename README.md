@@ -9,6 +9,8 @@ The plugin will add the `has-error` class to the parent `.form-group`, and
 
 As soon as the user interacts (`input` event) with the input, it wil clear both changes.
 
+Or, you can manually clear the error with `$('#myInput').clearError()`
+
 
 This library is so basic, just read the source
 -----------------------
@@ -49,11 +51,18 @@ This library is so basic, just read the source
         $formGroup.append($messageHelper);
       }
 
-      $this.one("input", function(){
-        $formGroup.removeClass("has-error").children('.clear-message').remove();
+      $this.one("input change", function(){
+        $this.clearError();
       });
     });
   };
+
+  /**
+   * Allows you to manually clear the error if required
+   */
+  $.fn.clearError = function jQuery_fn_clearError(){
+    $(this).parents(".form-group").removeClass("has-error").children('.clear-message').remove();
+  }
 })(jQuery);
 
 

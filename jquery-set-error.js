@@ -33,9 +33,16 @@
         $formGroup.append($messageHelper);
       }
 
-      $this.one("input", function(){
-        $formGroup.removeClass("has-error").children('.clear-message').remove();
+      $this.one("input change", function(){
+        $this.clearError();
       });
     });
   };
+
+  /**
+   * Allows you to manually clear the error if required
+   */
+  $.fn.clearError = function jQuery_fn_clearError(){
+    $(this).parents(".form-group").removeClass("has-error").children('.clear-message').remove();
+  }
 })(jQuery);
